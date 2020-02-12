@@ -31,7 +31,7 @@
     "@angular/language-service": "^9.0.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
-    "@types/node": "^12.11.1",
+    "@types/node": "^12.12.27",
     "angular2-highcharts": "^0.5.5",
     "codelyzer": "^5.1.2",
     "fibers": "^4.0.2",
