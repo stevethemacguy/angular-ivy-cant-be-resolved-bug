@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-ivy-cant-be-resolved';
+  options = {
+    chart: {
+      type: 'bar'
+    },
+    series: [{
+      data: [1, 0, 4]
+    }, {
+      data: [5, 7, 3]
+    }]
+  };
 }

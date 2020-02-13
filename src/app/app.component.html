@@ -1,9 +1,4 @@
-<div class="panel">
-  <chart class="chart-container" [options]="smallChartOptions" (load)="saveInstance($event.context, 'spark-area-chart')"
-         (selection)="onChartSelection($event)">
-    <series (mouseOver)="onSeriesMouseOver($event)">
-      <point (select)="onPointSelect($event)"></point>
-    </series>
-  </chart>
+<div id="container" style="width:100%; height:400px;">
+  <chart class="chart-container" [options]="options"></chart>
 </div>
 <router-outlet></router-outlet>
