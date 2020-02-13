@@ -1,37 +1,35 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { ChartModule } from 'angular2-highcharts';
+import { AppComponent } from './app.component';
 
 import { HighchartsStatic } from 'angular2-highcharts/dist/HighchartsService';
 
-// See the providers array below.
+
+// This just includes an extra HighCharts "exporting" module.
 export function highchartsFactory() {
   const hc = require('highcharts');
   const exporting = require('highcharts/modules/exporting');
-  const offline = require('highcharts/modules/offline-exporting');
   exporting(hc);
-  offline(hc);
   return hc;
 }
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    ChartModule, // Angular2-highcharts Module
+    FormsModule,
+    // Import ChartModule from the angular2-highcharts library
+    ChartModule,
   ],
   providers: [
-    // Provide the HighCarts service in the CoreModule so that the service isn't duplicated in lazy-loaded modules
     {
+      // Provide the HighCarts service
       provide: HighchartsStatic,
       useFactory: highchartsFactory
     },
   ],
+  declarations: [AppComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
